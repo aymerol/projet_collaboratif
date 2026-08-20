@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sapé Lumière — Festival de Sapologie et d'Art Lumineux</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="entete" id="entete">
+  <div class="conteneur entete__interieur">
+    <a href="#accueil" class="logo">Sapé <span>Lumière</span></a>
+    <nav class="navigation" id="navigation">
+      <a href="#concept">Concept</a>
+      <a href="#programme">Programme</a>
+      <a href="#visages">Line-up</a>
+      <a href="#billetterie">Billetterie</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#billetterie" class="bouton bouton--accent bouton--petit">Réserver mon Pass</a>
+    <button class="bascule-menu" id="basculeMenu" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="accueil">
+    <div class="conteneur hero__grille">
+      <div class="hero__texte" data-anim="monter">
+        <p class="etiquette">Brazzaville · 12, 13, 14 décembre 2026</p>
+        <h1 class="hero__titre">
+          L'élégance de la Sape rencontre
+          <span class="texte-accent">la magie de l'art lumineux</span>
+        </h1>
+        <p class="hero__description">
+          Un festival inédit célébrant la haute couture congolaise et le génie visuel de la
+          lumière au cœur de la capitale. Une communion chaleureuse, humaine et digne de
+          la Sapologie historique.
+        </p>
+        <div class="hero__actions">
+          <a href="#billetterie" class="bouton bouton--accent">Acheter un billet <span aria-hidden="true">→</span></a>
+          <a href="#programme" class="bouton bouton--contour">Voir le programme <span aria-hidden="true"><img src="/calendar.png" alt=""></span></a>
+        </div>
+        <div class="compte-a-rebours" id="compteARebours">
+          <p class="compte-a-rebours__legende">Début des festivités dans :</p>
+          <div class="compte-a-rebours__unites">
+            <div class="compte-a-rebours__unite">
+              <span class="compte-a-rebours__valeur" id="valeurJours">--</span>
+              <span class="compte-a-rebours__label">jours</span>
+            </div>
+            <div class="compte-a-rebours__unite">
+              <span class="compte-a-rebours__valeur" id="valeurHeures">--</span>
+              <span class="compte-a-rebours__label">heures</span>
+            </div>
+            <div class="compte-a-rebours__unite">
+              <span class="compte-a-rebours__valeur" id="valeurMinutes">--</span>
+              <span class="compte-a-rebours__label">minutes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visuel" data-anim="apparaitre">
+        <!-- <svg class="illustration-sapeur" viewBox="0 0 480 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration d'un sapeur en costume rayé sous des points de lumière"> -->
+          <img src="hero-right.png" alt="">
+          <defs>
+            <linearGradient id="degradeCiel" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f6e6cf"/>
+              <stop offset="100%" stop-color="#f0c9a0"/>
+            </linearGradient>
+            <linearGradient id="degradeCostume" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#e8734a"/>
+              <stop offset="100%" stop-color="#c9542f"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="480" height="620" rx="28" fill="url(#degradeCiel)"/>
+          <g id="nuagePoints"></g>
+          <ellipse cx="240" cy="565" rx="120" ry="16" fill="#00000014"/>
+          <rect x="205" y="470" width="15" height="90" rx="6" fill="#2b2420"/>
+          <rect x="260" y="470" width="15" height="90" rx="6" fill="#2b2420"/>
+          <path d="M170 260 L310 260 L330 470 L150 470 Z" fill="url(#degradeCostume)"/>
+          <path d="M170 260 L240 300 L310 260 L300 290 L240 330 L180 290 Z" fill="#f3ede2"/>
+          <g stroke="#fff6ea" stroke-width="6" opacity="0.55">
+            <line x1="185" y1="270" x2="165" y2="465"/>
+            <line x1="210" y1="265" x2="195" y2="468"/>
+            <line x1="235" y1="262" x2="228" y2="470"/>
+            <line x1="260" y1="262" x2="262" y2="470"/>
+            <line x1="285" y1="265" x2="295" y2="468"/>
+            <line x1="308" y1="270" x2="325" y2="465"/>
+          </g>
+          <circle cx="240" cy="200" r="52" fill="#d99a68"/>
+          <path d="M175 185 Q240 120 305 185 L312 165 Q240 105 168 165 Z" fill="#2b2420"/>
+          <ellipse cx="240" cy="150" rx="95" ry="18" fill="#2b2420"/>
+          <ellipse cx="240" cy="150" rx="60" ry="10" fill="#e8734a"/>
+          <rect x="195" y="330" width="90" height="20" rx="4" fill="#f3ede2" opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="partenaires">
+    <div class="conteneur">
+      <p class="partenaires__legende">Avec le soutien de nos fidèles partenaires</p>
+      <ul class="partenaires__liste">
+        <li>Brazza Design</li>
+        <li>Congo Tourisme</li>
+        <li>Mairie de Brazzaville</li>
+        <li>Art Lumina</li>
+        <li>African Wax Co.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="concept" id="concept">
+    <div class="conteneur">
+      <p class="etiquette etiquette--centre">Notre vision</p>
+      <h2 class="titre-section titre-section--centre">Célébrer la digne élégance et le génie créatif</h2>
+      <div class="grille-concept">
+        <article class="carte-concept" data-anim="monter">
+          <p class="carte-concept__oeil">Haute couture</p>
+          <h3 class="carte-concept__titre">Art de la Sape</h3>
+          <p class="carte-concept__texte">Au-delà de la mode, la Sapologie est une philosophie de vie, une posture d'honneur, de fraternité et d'élégance humaine. Nos créateurs locaux réinventent ce patrimoine sous un regard contemporain.</p>
+        </article>
+        <article class="carte-concept" data-anim="monter">
+          <p class="carte-concept__oeil">Art visuel</p>
+          <h3 class="carte-concept__titre">Créations de Lumière</h3>
+          <p class="carte-concept__texte">Des artistes visuels illuminent les ruelles et scènes de Brazzaville avec des installations interactives, mariant les pigments chauds d'Afrique aux technologies de projection modernes.</p>
+        </article>
+        <article class="carte-concept" data-anim="monter">
+          <p class="carte-concept__oeil">Communauté</p>
+          <h3 class="carte-concept__titre">Fête Humaine</h3>
+          <p class="carte-concept__texte">Pas de froideur artificielle de boîte de nuit : ici nous célébrons en plein air, sous les arbres géants du fleuve Congo, dans un esprit de convivialité chaleureuse, de chants et de rythmes d'Afrique.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="deroule" id="programme">
+    <div class="conteneur">
+      <p class="etiquette etiquette--centre">Au déroulé</p>
+      <h2 class="titre-section titre-section--centre">Trois jours de pure célébration</h2>
+      <div class="liste-journees">
+
+        <article class="journee" data-anim="monter">
+          <div class="journee__numero">01<span>Journée</span></div>
+          <div class="journee__contenu">
+            <p class="journee__date">Vendredi 12 décembre</p>
+            <h3 class="journee__titre">L'Éveil des Couleurs &amp; Ouverture</h3>
+            <ul class="journee__programme">
+              <li><span>18:00</span> Cérémonie d'ouverture lumineuse sur les rives du fleuve Congo</li>
+              <li><span>19:30</span> Grand Défilé Sape Traditionnelle — héritage d'or et de tissu</li>
+              <li><span>21:00</span> Concert acoustique et performances de rumba chaleureuse</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="journee" data-anim="monter">
+          <div class="journee__numero">02<span>Journée</span></div>
+          <div class="journee__contenu">
+            <p class="journee__date">Samedi 13 décembre</p>
+            <h3 class="journee__titre">Le Sommet de l'Élégance Contemporaine</h3>
+            <ul class="journee__programme">
+              <li><span>15:00</span> Ateliers de création textile &amp; discussions sur la mode circulaire en Afrique</li>
+              <li><span>18:30</span> Concours international de la Sapologie — style, prestance et verbe</li>
+              <li><span>21:30</span> Allumage des fresques géantes de Light Art interactives</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="journee" data-anim="monter">
+          <div class="journee__numero">03<span>Journée</span></div>
+          <div class="journee__contenu">
+            <p class="journee__date">Dimanche 14 décembre</p>
+            <h3 class="journee__titre">Harmonie Finale &amp; Clôture</h3>
+            <ul class="journee__programme">
+              <li><span>16:00</span> Exposition d'art et vente caritative de créateurs locaux</li>
+              <li><span>19:00</span> Fusion Finale — danse chorégraphiée drapée de néons et de lin</li>
+              <li><span>22:00</span> Clôture festive, feu de joie et contes lumineux</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="visages" id="visages">
+    <div class="conteneur">
+      <p class="etiquette etiquette--centre">Artistes &amp; Sapeurs</p>
+      <h2 class="titre-section titre-section--centre">Les Visages du Festival</h2>
+      <ul class="liste-artistes" id="listeArtistes"></ul>
+    </div>
+  </section>
+
+  <section class="billetterie" id="billetterie">
+    <div class="conteneur">
+      <p class="etiquette etiquette--centre">Billetterie</p>
+      <h2 class="titre-section titre-section--centre">Réservez vos pass d'élégance</h2>
+      <p class="billetterie__sous-titre">Sélectionnez votre formule. Après validation, la confirmation et les billets sont directement transmis via WhatsApp par un contact digne et humain.</p>
+
+      <div class="grille-pass">
+        <article class="carte-pass">
+          <h3 class="carte-pass__titre">Pass 1 jour</h3>
+          <p class="carte-pass__texte">Idéal pour découvrir une facette du festival.</p>
+          <p class="carte-pass__prix">15 000 <span>FCFA</span></p>
+          <ul class="carte-pass__avantages">
+            <li>Accès complet à une journée au choix</li>
+            <li>Accès aux défilés et installations</li>
+            <li>Espaces de restauration inclus</li>
+          </ul>
+          <button class="bouton bouton--contour bouton--pleine-largeur" data-pass="Pass 1 jour" data-prix="15 000 FCFA">Réserver via WhatsApp <span aria-hidden="true">→</span></button>
+        </article>
+
+        <article class="carte-pass carte-pass--vedette">
+          <p class="carte-pass__badge">Le plus choisi</p>
+          <h3 class="carte-pass__titre">Pass 3 jours</h3>
+          <p class="carte-pass__texte">L'expérience intégrale du vendredi au dimanche.</p>
+          <p class="carte-pass__prix">35 000 <span>FCFA</span></p>
+          <ul class="carte-pass__avantages">
+            <li>Accès aux trois jours, vendredi à dimanche</li>
+            <li>Toutes les créations mode et light-art</li>
+            <li>Passage prioritaire et rencontres créateurs</li>
+            <li>Cadeau de bienvenue Sapé exclusif</li>
+          </ul>
+          <button class="bouton bouton--accent bouton--pleine-largeur" data-pass="Pass 3 jours" data-prix="35 000 FCFA">Réserver via WhatsApp <span aria-hidden="true">→</span></button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-contact" id="faq">
+    <div class="conteneur grille-faq-contact">
+      <div class="bloc-faq">
+        <p class="etiquette">FAQ</p>
+        <h2 class="titre-section">Questions Fréquentes</h2>
+        <div class="accordeon" id="accordeon">
+          <div class="accordeon__item">
+            <button class="accordeon__question" aria-expanded="false">
+              Qu'est-ce que le mouvement de la Sape ?
+              <span class="accordeon__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="accordeon__reponse">
+              <p>La Société des Ambianceurs et des Personnes Élégantes (SAPE) est un art de vivre né au Congo, symbole de respect, d'estime de soi et de créativité théâtrale.</p>
+            </div>
+          </div>
+          <div class="accordeon__item">
+            <button class="accordeon__question" aria-expanded="false">
+              Où se déroule précisément le festival ?
+              <span class="accordeon__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="accordeon__reponse">
+              <p>En plein cœur de Brazzaville, à proximité du fleuve Congo et dans les espaces culturels partenaires du centre-ville.</p>
+            </div>
+          </div>
+          <div class="accordeon__item">
+            <button class="accordeon__question" aria-expanded="false">
+              Comment fonctionne la billetterie WhatsApp ?
+              <span class="accordeon__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="accordeon__reponse">
+              <p>Après avoir choisi votre Pass, un agent officiel valide vos places et coordonne le paiement mobile money sécurisé avec vous.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloc-contact">
+        <h3 class="bloc-contact__titre">Restons en contact</h3>
+        <p class="bloc-contact__texte">Des questions ou une envie de rejoindre le collectif de créateurs ? Écrivez-nous.</p>
+        <form class="formulaire-contact" id="formulaireContact" novalidate>
+          <div class="champ">
+            <label for="champNom">Votre nom complet</label>
+            <input type="text" id="champNom" name="nom" placeholder="Ex : Guy Christian" autocomplete="name">
+            <p class="champ__erreur" id="erreurNom"></p>
+          </div>
+          <div class="champ">
+            <label for="champEmail">Adresse email</label>
+            <input type="email" id="champEmail" name="email" placeholder="Ex : guy@sapeur.com" autocomplete="email">
+            <p class="champ__erreur" id="erreurEmail"></p>
+          </div>
+          <div class="champ">
+            <label for="champMessage">Votre message</label>
+            <textarea id="champMessage" name="message" rows="4" placeholder="Dites-nous tout..."></textarea>
+            <p class="champ__erreur" id="erreurMessage"></p>
+          </div>
+          <button type="submit" class="bouton bouton--accent bouton--pleine-largeur" id="boutonEnvoyer">
+            <span class="bouton__texte">Envoyer le message</span> <span aria-hidden="true">✉</span>
+          </button>
+          <p class="formulaire-contact__statut" id="statutFormulaire" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pied-de-page">
+  <div class="conteneur pied-de-page__grille">
+    <div class="pied-de-page__marque">
+      <p class="logo logo--clair">Sapé <span>Lumière</span></p>
+      <p class="pied-de-page__texte">Festival annuel liant haute couture et art visuel au cœur de Brazzaville.</p>
+    </div>
+    <div class="pied-de-page__colonne">
+      <p class="pied-de-page__titre-colonne">Événement</p>
+      <a href="#concept">Le Concept</a>
+      <a href="#programme">Le Programme</a>
+      <a href="#concept">La Sapologie</a>
+      <a href="#visages">Expositions d'art</a>
+    </div>
+    <div class="pied-de-page__colonne">
+      <p class="pied-de-page__titre-colonne">Pratique</p>
+      <a href="#faq">Accès &amp; Logement</a>
+      <a href="#billetterie">Boutique créateur</a>
+      <a href="#faq">Formulaires accréditation</a>
+      <a href="#faq">Contact Presse</a>
+    </div>
+    <div class="pied-de-page__colonne">
+      <p class="pied-de-page__titre-colonne">Nous suivre</p>
+      <a href="#accueil">Instagram — @Sapeulumiere</a>
+      <a href="#accueil">Facebook — Festival Sapé Lumière</a>
+      <a href="#faq">WhatsApp Direct</a>
+    </div>
+  </div>
+  <div class="conteneur pied-de-page__bas">
+    <p>© 2026 Festival Sapé Lumière. Tous droits réservés.</p>
+    <p>Créé avec fierté par le collectif Sapé Congolaise.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
