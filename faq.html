@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ & Contact — Sapé Lumière</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="entete" id="entete">
+  <div class="conteneur entete__interieur">
+    <a href="index.html" class="logo">Sapé <span>Lumière</span></a>
+    <nav class="navigation" id="navigation">
+      <a href="concept.html">Concept</a>
+      <a href="programme.html">Programme</a>
+      <a href="visages.html">Line-up</a>
+      <a href="partenaires.html">Partenaires</a>
+      <a href="billetterie.html">Billetterie</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+    </nav>
+    <a href="billetterie.html" class="bouton bouton--accent bouton--petit">Réserver mon Pass</a>
+    <button class="bascule-menu" id="basculeMenu" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="faq-contact" id="faq">
+    <div class="conteneur grille-faq-contact">
+      <div class="bloc-faq">
+        <p class="etiquette">FAQ</p>
+        <h2 class="titre-section">Questions Fréquentes</h2>
+        <div class="accordeon" id="accordeon">
+          <div class="accordeon__item">
+            <button class="accordeon__question" aria-expanded="false">
+              Qu'est-ce que le mouvement de la Sape ?
+              <span class="accordeon__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="accordeon__reponse">
+              <p>La Société des Ambianceurs et des Personnes Élégantes (SAPE) est un art de vivre né au Congo, symbole de respect, d'estime de soi et de créativité théâtrale.</p>
+            </div>
+          </div>
+          <div class="accordeon__item">
+            <button class="accordeon__question" aria-expanded="false">
+              Où se déroule précisément le festival ?
+              <span class="accordeon__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="accordeon__reponse">
+              <p>En plein cœur de Brazzaville, à proximité du fleuve Congo et dans les espaces culturels partenaires du centre-ville.</p>
+            </div>
+          </div>
+          <div class="accordeon__item">
+            <button class="accordeon__question" aria-expanded="false">
+              Comment fonctionne la billetterie WhatsApp ?
+              <span class="accordeon__icone" aria-hidden="true">+</span>
+            </button>
+            <div class="accordeon__reponse">
+              <p>Après avoir choisi votre Pass, un agent officiel valide vos places et coordonne le paiement mobile money sécurisé avec vous.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bloc-contact">
+        <h3 class="bloc-contact__titre">Restons en contact</h3>
+        <p class="bloc-contact__texte">Des questions ou une envie de rejoindre le collectif de créateurs ? Écrivez-nous.</p>
+        <form class="formulaire-contact" id="formulaireContact" novalidate>
+          <div class="champ">
+            <label for="champNom">Votre nom complet</label>
+            <input type="text" id="champNom" name="nom" placeholder="Ex : Guy Christian" autocomplete="name">
+            <p class="champ__erreur" id="erreurNom"></p>
+          </div>
+          <div class="champ">
+            <label for="champEmail">Adresse email</label>
+            <input type="email" id="champEmail" name="email" placeholder="Ex : guy@sapeur.com" autocomplete="email">
+            <p class="champ__erreur" id="erreurEmail"></p>
+          </div>
+          <div class="champ">
+            <label for="champMessage">Votre message</label>
+            <textarea id="champMessage" name="message" rows="4" placeholder="Dites-nous tout..."></textarea>
+            <p class="champ__erreur" id="erreurMessage"></p>
+          </div>
+          <button type="submit" class="bouton bouton--accent bouton--pleine-largeur" id="boutonEnvoyer">
+            <span class="bouton__texte">Envoyer le message</span> <span aria-hidden="true">✉</span>
+          </button>
+          <p class="formulaire-contact__statut" id="statutFormulaire" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pied-de-page">
+  <div class="conteneur pied-de-page__grille">
+    <div class="pied-de-page__marque">
+      <p class="logo logo--clair">Sapé <span>Lumière</span></p>
+      <p class="pied-de-page__texte">Festival annuel liant haute couture et art visuel au cœur de Brazzaville.</p>
+    </div>
+    <div class="pied-de-page__colonne">
+      <p class="pied-de-page__titre-colonne">Événement</p>
+      <a href="concept.html">Le Concept</a>
+      <a href="programme.html">Le Programme</a>
+      <a href="concept.html">La Sapologie</a>
+      <a href="visages.html">Expositions d'art</a>
+      <a href="partenaires.html">Nos Partenaires</a>
+    </div>
+    <div class="pied-de-page__colonne">
+      <p class="pied-de-page__titre-colonne">Pratique</p>
+      <a href="faq.html">Accès &amp; Logement</a>
+      <a href="billetterie.html">Boutique créateur</a>
+      <a href="faq.html">Formulaires accréditation</a>
+      <a href="faq.html">Contact Presse</a>
+    </div>
+    <div class="pied-de-page__colonne">
+      <p class="pied-de-page__titre-colonne">Nous suivre</p>
+      <a href="index.html">Instagram — @Sapeulumiere</a>
+      <a href="index.html">Facebook — Festival Sapé Lumière</a>
+      <a href="faq.html">WhatsApp Direct</a>
+    </div>
+  </div>
+  <div class="conteneur pied-de-page__bas">
+    <p>© 2026 Festival Sapé Lumière. Tous droits réservés.</p>
+    <p>Créé avec fierté par le collectif Sapé Congolaise.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

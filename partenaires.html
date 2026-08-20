@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sapé Lumière — Festival de Sapologie et d'Art Lumineux</title>
+<title>Partenaires — Sapé Lumière</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
       <a href="concept.html">Concept</a>
       <a href="programme.html">Programme</a>
       <a href="visages.html">Line-up</a>
-      <a href="partenaires.html">Partenaires</a>
+      <a href="partenaires.html" aria-current="page">Partenaires</a>
       <a href="billetterie.html">Billetterie</a>
       <a href="faq.html">FAQ</a>
     </nav>
@@ -30,49 +30,32 @@
 </header>
 
 <main>
-  <section class="hero" id="accueil">
-    <div class="conteneur hero__grille">
-      <div class="hero__texte" data-anim="monter">
-        <p class="etiquette">Brazzaville · 12, 13, 14 décembre 2026</p>
-        <h1 class="hero__titre">
-          L'élégance de la Sape rencontre
-          <span class="texte-accent">la magie de l'art lumineux</span>
-        </h1>
-        <p class="hero__description">
-          Un festival inédit célébrant la haute couture congolaise et le génie visuel de la
-          lumière au cœur de la capitale. Une communion chaleureuse, humaine et digne de
-          la Sapologie historique.
-        </p>
-        <div class="hero__actions">
-          <a href="billetterie.html" class="bouton bouton--accent">Acheter un billet <span aria-hidden="true">→</span></a>
-          <a href="programme.html" class="bouton bouton--contour">Voir le programme <span aria-hidden="true"><img src="calendar.png" alt=""></span></a>
-        </div>
-        <div class="compte-a-rebours" id="compteARebours">
-          <p class="compte-a-rebours__legende">Début des festivités dans :</p>
-          <div class="compte-a-rebours__unites">
-            <div class="compte-a-rebours__unite">
-              <span class="compte-a-rebours__valeur" id="valeurJours">--</span>
-              <span class="compte-a-rebours__label">jours</span>
-            </div>
-            <div class="compte-a-rebours__unite">
-              <span class="compte-a-rebours__valeur" id="valeurHeures">--</span>
-              <span class="compte-a-rebours__label">heures</span>
-            </div>
-            <div class="compte-a-rebours__unite">
-              <span class="compte-a-rebours__valeur" id="valeurMinutes">--</span>
-              <span class="compte-a-rebours__label">minutes</span>
-            </div>
-            <div class="compte-a-rebours__unite">
-              <span class="compte-a-rebours__valeur" id="valeurSecondes">--</span>
-              <span class="compte-a-rebours__label">secondes</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__visuel" data-anim="apparaitre">
-        <img src="hero-right.png" alt="image-sapeur">
-      </div>
+  <section class="partenaires" id="partenaires">
+    <div class="conteneur">
+      <p class="etiquette etiquette--centre">Ils nous soutiennent</p>
+      <h2 class="titre-section titre-section--centre">Nos Partenaires</h2>
+      <ul class="grille-partenaires">
+        <li class="carte-partenaire" data-anim="monter">
+          <span class="carte-partenaire__jeton">BD</span>
+          <span class="carte-partenaire__nom">Brazza Design</span>
+        </li>
+        <li class="carte-partenaire" data-anim="monter">
+          <span class="carte-partenaire__jeton">CT</span>
+          <span class="carte-partenaire__nom">Congo Tourisme</span>
+        </li>
+        <li class="carte-partenaire" data-anim="monter">
+          <span class="carte-partenaire__jeton">MB</span>
+          <span class="carte-partenaire__nom">Mairie de Brazzaville</span>
+        </li>
+        <li class="carte-partenaire" data-anim="monter">
+          <span class="carte-partenaire__jeton">AL</span>
+          <span class="carte-partenaire__nom">Art Lumina</span>
+        </li>
+        <li class="carte-partenaire" data-anim="monter">
+          <span class="carte-partenaire__jeton">AW</span>
+          <span class="carte-partenaire__nom">African Wax Co.</span>
+        </li>
+      </ul>
     </div>
   </section>
 </main>

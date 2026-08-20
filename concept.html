@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sapé Lumière — Festival de Sapologie et d'Art Lumineux</title>
+<title>Concept — Sapé Lumière</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
   <div class="conteneur entete__interieur">
     <a href="index.html" class="logo">Sapé <span>Lumière</span></a>
     <nav class="navigation" id="navigation">
-      <a href="concept.html">Concept</a>
+      <a href="concept.html" aria-current="page">Concept</a>
       <a href="programme.html">Programme</a>
       <a href="visages.html">Line-up</a>
       <a href="partenaires.html">Partenaires</a>
@@ -30,48 +30,26 @@
 </header>
 
 <main>
-  <section class="hero" id="accueil">
-    <div class="conteneur hero__grille">
-      <div class="hero__texte" data-anim="monter">
-        <p class="etiquette">Brazzaville · 12, 13, 14 décembre 2026</p>
-        <h1 class="hero__titre">
-          L'élégance de la Sape rencontre
-          <span class="texte-accent">la magie de l'art lumineux</span>
-        </h1>
-        <p class="hero__description">
-          Un festival inédit célébrant la haute couture congolaise et le génie visuel de la
-          lumière au cœur de la capitale. Une communion chaleureuse, humaine et digne de
-          la Sapologie historique.
-        </p>
-        <div class="hero__actions">
-          <a href="billetterie.html" class="bouton bouton--accent">Acheter un billet <span aria-hidden="true">→</span></a>
-          <a href="programme.html" class="bouton bouton--contour">Voir le programme <span aria-hidden="true"><img src="calendar.png" alt=""></span></a>
-        </div>
-        <div class="compte-a-rebours" id="compteARebours">
-          <p class="compte-a-rebours__legende">Début des festivités dans :</p>
-          <div class="compte-a-rebours__unites">
-            <div class="compte-a-rebours__unite">
-              <span class="compte-a-rebours__valeur" id="valeurJours">--</span>
-              <span class="compte-a-rebours__label">jours</span>
-            </div>
-            <div class="compte-a-rebours__unite">
-              <span class="compte-a-rebours__valeur" id="valeurHeures">--</span>
-              <span class="compte-a-rebours__label">heures</span>
-            </div>
-            <div class="compte-a-rebours__unite">
-              <span class="compte-a-rebours__valeur" id="valeurMinutes">--</span>
-              <span class="compte-a-rebours__label">minutes</span>
-            </div>
-            <div class="compte-a-rebours__unite">
-              <span class="compte-a-rebours__valeur" id="valeurSecondes">--</span>
-              <span class="compte-a-rebours__label">secondes</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__visuel" data-anim="apparaitre">
-        <img src="hero-right.png" alt="image-sapeur">
+  <section class="concept" id="concept">
+    <div class="conteneur">
+      <p class="etiquette etiquette--centre">Notre vision</p>
+      <h2 class="titre-section titre-section--centre">Célébrer la digne élégance et le génie créatif</h2>
+      <div class="grille-concept">
+        <article class="carte-concept" data-anim="monter">
+          <p class="carte-concept__oeil">Haute couture</p>
+          <h3 class="carte-concept__titre">Art de la Sape</h3>
+          <p class="carte-concept__texte">Au-delà de la mode, la Sapologie est une philosophie de vie, une posture d'honneur, de fraternité et d'élégance humaine. Nos créateurs locaux réinventent ce patrimoine sous un regard contemporain.</p>
+        </article>
+        <article class="carte-concept" data-anim="monter">
+          <p class="carte-concept__oeil">Art visuel</p>
+          <h3 class="carte-concept__titre">Créations de Lumière</h3>
+          <p class="carte-concept__texte">Des artistes visuels illuminent les ruelles et scènes de Brazzaville avec des installations interactives, mariant les pigments chauds d'Afrique aux technologies de projection modernes.</p>
+        </article>
+        <article class="carte-concept" data-anim="monter">
+          <p class="carte-concept__oeil">Communauté</p>
+          <h3 class="carte-concept__titre">Fête Humaine</h3>
+          <p class="carte-concept__texte">Pas de froideur artificielle de boîte de nuit : ici nous célébrons en plein air, sous les arbres géants du fleuve Congo, dans un esprit de convivialité chaleureuse, de chants et de rythmes d'Afrique.</p>
+        </article>
       </div>
     </div>
   </section>

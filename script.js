@@ -1,14 +1,21 @@
 const listeArtistes = [
-  { initiales: "AF", nom: "Les Ambianceurs du Fleuve", role: "Musique — Rumba & Folk", couleur: "#d1703f" },
-  { initiales: "MV", nom: "Mabiala Voice", role: "Musique — Afrobeat Acoustique", couleur: "#4f7a5b" },
-  { initiales: "BH", nom: "Bantu Horizon", role: "Musique — Fusion Traditionnelle", couleur: "#8a5a3f" },
-  { initiales: "GS", nom: "La Griffe Sapologique", role: "Mode — Collectif de créateurs de Brazzaville", couleur: "#b25a2f" },
-  { initiales: "EB", nom: "Élégance de Bacongo", role: "Mode — Maison de couture artisanale", couleur: "#c9542f" },
-  { initiales: "TC", nom: "Tsimba Couture", role: "Mode — Styliste & Modéliste d'art", couleur: "#a8763f" },
-  { initiales: "LK", nom: "Collectif Lumen Kongo", role: "Art Lumineux — Installations géantes", couleur: "#3f6a7a" },
-  { initiales: "KF", nom: "Kongo Frequency", role: "Art Lumineux — Mapping & Vidéo d'art", couleur: "#6a4f8a" },
-  { initiales: "NW", nom: "Ndeko Wax", role: "Artisanat — Sculpture & Tissage", couleur: "#7a5a3f" }
+  { initiales: "AF", nom: "Les Ambianceurs du Fleuve", role: "Musique — Rumba & Folk", categorie: "musique", couleur: "#d1703f" },
+  { initiales: "MV", nom: "Mabiala Voice", role: "Musique — Afrobeat Acoustique", categorie: "musique", couleur: "#4f7a5b" },
+  { initiales: "BH", nom: "Bantu Horizon", role: "Musique — Fusion Traditionnelle", categorie: "musique", couleur: "#8a5a3f" },
+  { initiales: "GS", nom: "La Griffe Sapologique", role: "Mode — Collectif de créateurs de Brazzaville", categorie: "mode", couleur: "#b25a2f" },
+  { initiales: "EB", nom: "Élégance de Bacongo", role: "Mode — Maison de couture artisanale", categorie: "mode", couleur: "#c9542f" },
+  { initiales: "TC", nom: "Tsimba Couture", role: "Mode — Styliste & Modéliste d'art", categorie: "mode", couleur: "#a8763f" },
+  { initiales: "LK", nom: "Collectif Lumen Kongo", role: "Art Lumineux — Installations géantes", categorie: "art-lumineux", couleur: "#3f6a7a" },
+  { initiales: "KF", nom: "Kongo Frequency", role: "Art Lumineux — Mapping & Vidéo d'art", categorie: "art-lumineux", couleur: "#6a4f8a" },
+  { initiales: "NW", nom: "Ndeko Wax", role: "Artisanat — Sculpture & Tissage", categorie: "artisanat", couleur: "#7a5a3f" }
 ];
+
+// Photos fictives générées (avatars illustrés, aucun artiste n'est une personne réelle)
+function urlAvatarFictif(nom, couleur) {
+  const graine = encodeURIComponent(nom);
+  const teinte = encodeURIComponent(couleur.replace("#", ""));
+  return `https://api.dicebear.com/8.x/personas/svg?seed=${graine}&backgroundColor=${teinte}`;
+}
 
 const dateFestival = new Date("2026-12-12T00:00:00");
 
@@ -16,7 +23,8 @@ function demarrerCompteARebours() {
   const noeudJours = document.getElementById("valeurJours");
   const noeudHeures = document.getElementById("valeurHeures");
   const noeudMinutes = document.getElementById("valeurMinutes");
-  if (!noeudJours || !noeudHeures || !noeudMinutes) return;
+  const noeudSecondes = document.getElementById("valeurSecondes");
+  if (!noeudJours || !noeudHeures || !noeudMinutes || !noeudSecondes) return;
 
   function mettreAJour() {
     const maintenant = new Date();
@@ -26,20 +34,23 @@ function demarrerCompteARebours() {
       noeudJours.textContent = "0";
       noeudHeures.textContent = "0";
       noeudMinutes.textContent = "0";
+      noeudSecondes.textContent = "0";
       return;
     }
 
     const jours = Math.floor(ecartMs / (1000 * 60 * 60 * 24));
     const heures = Math.floor((ecartMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((ecartMs % (1000 * 60 * 60)) / (1000 * 60));
+    const secondes = Math.floor((ecartMs % (1000 * 60)) / 1000);
 
     noeudJours.textContent = jours;
     noeudHeures.textContent = heures;
     noeudMinutes.textContent = minutes;
+    noeudSecondes.textContent = secondes;
   }
 
   mettreAJour();
-  setInterval(mettreAJour, 1000 * 30);
+  setInterval(mettreAJour, 1000);
 }
 
 function initialiserMenuMobile() {
@@ -92,6 +103,32 @@ function initialiserAnimationsAuDefilement() {
   elements.forEach((element) => observateur.observe(element));
 }
 
+function initialiserOngletsJours() {
+  const conteneurOnglets = document.getElementById("ongletsJours");
+  if (!conteneurOnglets) return;
+
+  const onglets = conteneurOnglets.querySelectorAll(".onglet-jour");
+
+  onglets.forEach((onglet) => {
+    onglet.addEventListener("click", () => {
+      const cibleId = onglet.getAttribute("data-cible");
+
+      onglets.forEach((autre) => {
+        autre.classList.remove("onglet-jour--actif");
+        autre.setAttribute("aria-selected", "false");
+      });
+      onglet.classList.add("onglet-jour--actif");
+      onglet.setAttribute("aria-selected", "true");
+
+      document.querySelectorAll(".journee").forEach((journee) => {
+        const estActive = journee.id === cibleId;
+        journee.hidden = !estActive;
+        journee.classList.toggle("journee--active", estActive);
+      });
+    });
+  });
+}
+
 function initialiserAccordeon() {
   const accordeon = document.getElementById("accordeon");
   if (!accordeon) return;
@@ -118,8 +155,11 @@ function construireListeArtistes() {
   listeArtistes.forEach((artiste) => {
     const element = document.createElement("li");
     element.className = "artiste";
+    element.setAttribute("data-categorie", artiste.categorie);
     element.innerHTML = `
-      <span class="artiste__jetons" style="background:${artiste.couleur}">${artiste.initiales}</span>
+      <span class="artiste__photo" style="background:${artiste.couleur}22">
+        <img src="${urlAvatarFictif(artiste.nom, artiste.couleur)}" alt="Portrait fictif de ${artiste.nom}" loading="lazy">
+      </span>
       <span class="artiste__details">
         <span class="artiste__nom">${artiste.nom}</span>
         <span class="artiste__role">${artiste.role}</span>
@@ -129,6 +169,30 @@ function construireListeArtistes() {
   });
 
   conteneur.appendChild(fragment);
+}
+
+function initialiserFiltresArtistes() {
+  const conteneurFiltres = document.getElementById("filtresArtistes");
+  const conteneurArtistes = document.getElementById("listeArtistes");
+  if (!conteneurFiltres || !conteneurArtistes) return;
+
+  conteneurFiltres.querySelectorAll(".filtre-artiste").forEach((bouton) => {
+    bouton.addEventListener("click", () => {
+      const categorie = bouton.getAttribute("data-categorie");
+
+      conteneurFiltres.querySelectorAll(".filtre-artiste").forEach((autre) => {
+        autre.classList.remove("filtre-artiste--actif");
+        autre.setAttribute("aria-pressed", "false");
+      });
+      bouton.classList.add("filtre-artiste--actif");
+      bouton.setAttribute("aria-pressed", "true");
+
+      conteneurArtistes.querySelectorAll(".artiste").forEach((carte) => {
+        const correspond = categorie === "toutes" || carte.getAttribute("data-categorie") === categorie;
+        carte.classList.toggle("artiste--masque", !correspond);
+      });
+    });
+  });
 }
 
 function initialiserReservationWhatsapp() {
@@ -250,8 +314,10 @@ document.addEventListener("DOMContentLoaded", () => {
   initialiserMenuMobile();
   initialiserEnteteAuScroll();
   initialiserAnimationsAuDefilement();
+  initialiserOngletsJours();
   initialiserAccordeon();
   construireListeArtistes();
+  initialiserFiltresArtistes();
   initialiserReservationWhatsapp();
   initialiserFormulaireContact();
   genererPointsLumiere();
