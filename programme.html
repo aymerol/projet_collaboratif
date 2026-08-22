@@ -35,7 +35,11 @@
       <p class="etiquette etiquette--centre">Au déroulé</p>
       <h2 class="titre-section titre-section--centre">Trois jours de pure célébration</h2>
       <div class="onglets-jours" id="ongletsJours" role="tablist" aria-label="Choisir une journée du festival">
-        <button class="onglet-jour onglet-jour--actif" role="tab" aria-selected="true" aria-controls="journee-01" id="onglet-journee-01" data-cible="journee-01">
+        <button class="onglet-jour onglet-jour--actif" role="tab" aria-selected="true" aria-controls="liste-journees" id="onglet-toutes" data-cible="toutes">
+          <span class="onglet-jour__numero">✦</span>
+          <span class="onglet-jour__date">Tous</span>
+        </button>
+        <button class="onglet-jour" role="tab" aria-selected="false" aria-controls="journee-01" id="onglet-journee-01" data-cible="journee-01">
           <span class="onglet-jour__numero">01</span>
           <span class="onglet-jour__date">Vendredi 12 déc.</span>
         </button>
@@ -49,7 +53,7 @@
         </button>
       </div>
 
-      <div class="liste-journees">
+      <div class="liste-journees" id="liste-journees">
 
         <article class="journee journee--active" data-anim="monter" id="journee-01" role="tabpanel" aria-labelledby="onglet-journee-01">
           <div class="journee__numero">01<span>Journée</span></div>
@@ -64,7 +68,7 @@
           </div>
         </article>
 
-        <article class="journee" data-anim="monter" id="journee-02" role="tabpanel" aria-labelledby="onglet-journee-02" hidden>
+        <article class="journee" data-anim="monter" id="journee-02" role="tabpanel" aria-labelledby="onglet-journee-02">
           <div class="journee__numero">02<span>Journée</span></div>
           <div class="journee__contenu">
             <p class="journee__date">Samedi 13 décembre</p>
@@ -77,7 +81,7 @@
           </div>
         </article>
 
-        <article class="journee" data-anim="monter" id="journee-03" role="tabpanel" aria-labelledby="onglet-journee-03" hidden>
+        <article class="journee" data-anim="monter" id="journee-03" role="tabpanel" aria-labelledby="onglet-journee-03">
           <div class="journee__numero">03<span>Journée</span></div>
           <div class="journee__contenu">
             <p class="journee__date">Dimanche 14 décembre</p>

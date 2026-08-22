@@ -1,21 +1,12 @@
 const listeArtistes = [
-  { initiales: "AF", nom: "Les Ambianceurs du Fleuve", role: "Musique — Rumba & Folk", categorie: "musique", couleur: "#d1703f" },
-  { initiales: "MV", nom: "Mabiala Voice", role: "Musique — Afrobeat Acoustique", categorie: "musique", couleur: "#4f7a5b" },
-  { initiales: "BH", nom: "Bantu Horizon", role: "Musique — Fusion Traditionnelle", categorie: "musique", couleur: "#8a5a3f" },
-  { initiales: "GS", nom: "La Griffe Sapologique", role: "Mode — Collectif de créateurs de Brazzaville", categorie: "mode", couleur: "#b25a2f" },
-  { initiales: "EB", nom: "Élégance de Bacongo", role: "Mode — Maison de couture artisanale", categorie: "mode", couleur: "#c9542f" },
-  { initiales: "TC", nom: "Tsimba Couture", role: "Mode — Styliste & Modéliste d'art", categorie: "mode", couleur: "#a8763f" },
-  { initiales: "LK", nom: "Collectif Lumen Kongo", role: "Art Lumineux — Installations géantes", categorie: "art-lumineux", couleur: "#3f6a7a" },
-  { initiales: "KF", nom: "Kongo Frequency", role: "Art Lumineux — Mapping & Vidéo d'art", categorie: "art-lumineux", couleur: "#6a4f8a" },
-  { initiales: "NW", nom: "Ndeko Wax", role: "Artisanat — Sculpture & Tissage", categorie: "artisanat", couleur: "#7a5a3f" }
+  { nom: "Jolie gamine", role: "Danseuse", categorie: "danseurs", photo: "Images/Artistes/Jolie gamine.jpeg" },
+  { nom: "Levi Cabutu", role: "Danseur", categorie: "danseurs", photo: "Images/Artistes/Levi Cabutu.jpeg" },
+  { nom: "Doudou copa", role: "Chanteur", categorie: "chanteur", photo: "Images/Artistes/Doudou copa.jpeg" },
+  { nom: "Afarat Tsena", role: "Chanteur", categorie: "chanteur", photo: "Images/Artistes/Afarat Tsena.jpeg" },
+  { nom: "Fally", role: "Chanteur", categorie: "chanteur", photo: "Images/Artistes/Fally.jpeg" },
+  { nom: "Dr Lymane", role: "Sapeur", categorie: "sapeur", photo: "Images/Artistes/Dr Lymane.jpeg" },
+  { nom: "Norbat de Paris", role: "Sapeur", categorie: "sapeur", photo: "Images/Artistes/Norbat de Paris.jpeg" }
 ];
-
-// Photos fictives générées (avatars illustrés, aucun artiste n'est une personne réelle)
-function urlAvatarFictif(nom, couleur) {
-  const graine = encodeURIComponent(nom);
-  const teinte = encodeURIComponent(couleur.replace("#", ""));
-  return `https://api.dicebear.com/8.x/personas/svg?seed=${graine}&backgroundColor=${teinte}`;
-}
 
 const dateFestival = new Date("2026-12-12T00:00:00");
 
@@ -121,7 +112,7 @@ function initialiserOngletsJours() {
       onglet.setAttribute("aria-selected", "true");
 
       document.querySelectorAll(".journee").forEach((journee) => {
-        const estActive = journee.id === cibleId;
+        const estActive = cibleId === "toutes" || journee.id === cibleId;
         journee.hidden = !estActive;
         journee.classList.toggle("journee--active", estActive);
       });
@@ -157,13 +148,40 @@ function construireListeArtistes() {
     element.className = "artiste";
     element.setAttribute("data-categorie", artiste.categorie);
     element.innerHTML = `
-      <span class="artiste__photo" style="background:${artiste.couleur}22">
-        <img src="${urlAvatarFictif(artiste.nom, artiste.couleur)}" alt="Portrait fictif de ${artiste.nom}" loading="lazy">
+      <span class="artiste__photo">
+        <img src="${encodeURI(artiste.photo)}" alt="Portrait de ${artiste.nom}" loading="lazy">
       </span>
       <span class="artiste__details">
         <span class="artiste__nom">${artiste.nom}</span>
         <span class="artiste__role">${artiste.role}</span>
       </span>
+    `;
+    fragment.appendChild(element);
+  });
+
+  conteneur.appendChild(fragment);
+}
+
+const listePartenaires = [
+  { nom: "MTN", photo: "Images/Partenaires/MTN.jpeg" },
+  { nom: "SNPC", photo: "Images/Partenaires/SNPC.jpeg" },
+  { nom: "BUROTOP IRIS", photo: "Images/Partenaires/BUROTOP IRIS.jpeg" }
+];
+
+function construireListePartenaires() {
+  const conteneur = document.getElementById("listePartenaires");
+  if (!conteneur) return;
+
+  const fragment = document.createDocumentFragment();
+
+  listePartenaires.forEach((partenaire) => {
+    const element = document.createElement("li");
+    element.className = "carte-partenaire";
+    element.innerHTML = `
+      <span class="carte-partenaire__logo">
+        <img src="${encodeURI(partenaire.photo)}" alt="Logo ${partenaire.nom}" loading="lazy">
+      </span>
+      <span class="carte-partenaire__nom">${partenaire.nom}</span>
     `;
     fragment.appendChild(element);
   });
@@ -318,6 +336,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initialiserAccordeon();
   construireListeArtistes();
   initialiserFiltresArtistes();
+  construireListePartenaires();
   initialiserReservationWhatsapp();
   initialiserFormulaireContact();
   genererPointsLumiere();

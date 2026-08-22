@@ -282,6 +282,20 @@ input, textarea {
   font-weight: 700;
 }
 
+.carte-partenaire__logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--couleur-bordure);
+}
+
+.carte-partenaire__logo img { width: 100%; height: 100%; object-fit: contain; padding: 0.4rem; }
+
 .carte-partenaire__nom { font-size: 0.85rem; font-weight: 600; color: var(--couleur-texte-doux); }
 
 .concept { background: var(--couleur-fond-douce); padding-block: clamp(3.5rem, 7vw, 6rem); }
@@ -371,6 +385,8 @@ input, textarea {
 }
 
 .journee:hover { box-shadow: var(--ombre-carte); transform: translateY(-2px); }
+
+.journee[hidden] { display: none; }
 
 .journee__numero {
   font-family: var(--police-affichage);
