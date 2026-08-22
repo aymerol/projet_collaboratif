@@ -3,7 +3,7 @@ const listeArtistes = [
   { nom: "Levi Cabutu", role: "Danseur", categorie: "danseurs", photo: "Images/Artistes/Levi Cabutu.jpeg" },
   { nom: "Doudou copa", role: "Chanteur", categorie: "chanteur", photo: "Images/Artistes/Doudou copa.jpeg" },
   { nom: "Afarat Tsena", role: "Chanteur", categorie: "chanteur", photo: "Images/Artistes/Afarat Tsena.jpeg" },
-  { nom: "Fally", role: "Chanteur", categorie: "chanteur", photo: "Images/Artistes/Fally Ipupa.jpeg" },
+  { nom: "Fally", role: "Chanteur", categorie: "chanteur", photo: "Images/Artistes/Fally.jpeg" },
   { nom: "Dr Lymane", role: "Sapeur", categorie: "sapeur", photo: "Images/Artistes/Dr Lymane.jpeg" },
   { nom: "Norbat de Paris", role: "Sapeur", categorie: "sapeur", photo: "Images/Artistes/Norbat de Paris.jpeg" }
 ];
